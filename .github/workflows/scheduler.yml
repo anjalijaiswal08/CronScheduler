@@ -1,0 +1,10 @@
+on:
+  schedule:
+    - cron: '*/5  * * * *'
+
+job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          run:
+            echo "Checking out the code"
