@@ -1,10 +1,17 @@
+name: Run every 5 minutes
+
 on:
   schedule:
-    - cron: '*/5  * * * *'
+    - cron: '*/5 * * * *'
 
-job:
+jobs:
+  run_every_5_minutes:
     runs-on: ubuntu-latest
+
     steps:
-        - name: Checkout
-          run:
-            echo "Checking out the code"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run a simple script
+        run: |
+          echo "This job runs every 5 minutes"
